@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function AddItems(props: any) {
-  console.log(props.location.state);
+  //console.log(props.location.state);
   const [fruitName, setFruitName] = useState("");
 
   return (
@@ -10,7 +10,7 @@ function AddItems(props: any) {
         onSubmit={(e) => {
           e.preventDefault();
           //props.location.state;
-          props.location.state.additem();
+          props.onAdd(fruitName);
         }}
       >
         <label htmlFor="fruitName" style={{ marginRight: 10 }}>

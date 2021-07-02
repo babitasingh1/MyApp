@@ -2,29 +2,22 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-function handleAdd() {
-  console.log("came here");
-}
-
-function ListItems() {
-  const [items, setItems] = useState(["apple", "mangoes", "banana", "oranges"]);
-
+function ListItems(props: any) {
+  console.log(props);
   return (
     <div>
-      {items.map((item) => (
+      {props.items.map((item: any) => (
         <ul>
-          <li>{item}</li>
+          <div className="listItem  ">
+            <li className="list-item">{item}</li>
+            <div className=" deleteButton" onClick={() => props.onDelete(item)}>
+              X
+            </div>
+          </div>
         </ul>
       ))}
 
-      <Link
-        to={{
-          pathname: "/Add",
-          state: { additem: handleAdd },
-        }}
-      >
-        Add item
-      </Link>
+      <Link to="/Add">Add item</Link>
     </div>
   );
 }
