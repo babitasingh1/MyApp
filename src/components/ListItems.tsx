@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function handleAdd() {
-  console.log("came");
+  console.log("came here");
 }
 
 function ListItems() {
@@ -16,9 +16,15 @@ function ListItems() {
           <li>{item}</li>
         </ul>
       ))}
-      <button onClick={handleAdd}>Add</button>
-      <br></br>
-      <Link to="/Add"></Link>
+
+      <Link
+        to={{
+          pathname: "/Add",
+          state: { additem: handleAdd },
+        }}
+      >
+        Add item
+      </Link>
     </div>
   );
 }

@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
-function handleSubmit(e:any){
-    e.preventDefault();
-    console.log('added');
+function AddItems(props: any) {
+  console.log(props.location.state);
+  const [fruitName, setFruitName] = useState("");
 
-}
-
-function AddItems(){
-    console.log('came here');
-
-
-    return(
-        <div><form onSubmit={handleSubmit}>
-            <label htmlFor='fruitName'>fruitName</label>
-                <input name='fruitName' type='input' placeholder='fruitName'></input></form></div>
-    )
+  return (
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          //props.location.state;
+          props.location.state.additem();
+        }}
+      >
+        <label htmlFor="fruitName" style={{ marginRight: 10 }}>
+          fruitName
+        </label>
+        <input
+          name="fruitName"
+          type="input"
+          placeholder="fruitName"
+          value={fruitName}
+          onChange={(e) => setFruitName(e.target.value)}
+        ></input>
+      </form>
+    </div>
+  );
 }
 
 export default AddItems;
