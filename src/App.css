@@ -24,6 +24,21 @@
   color: white;
 }
 
+.listItem {
+  height: auto;
+  width: 200px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.deleteButton {
+  cursor: pointer;
+  float: right;
+}
+
+.list-item {
+  display: inline-block;
+}
 .App-link {
   color: #61dafb;
 }
