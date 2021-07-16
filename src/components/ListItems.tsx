@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css";
 
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,10 @@ function ListItems(props: any) {
         </ul>
       ))}
 
-      <Link to="/Add">Add item</Link>
+      <Link to="/Add" className="links">
+        Add item
+      </Link>
+      <Link to="/Change">Change item</Link>
     </div>
   );
 }
